@@ -7,8 +7,7 @@ namespace App.console.bank
         static void Main(string[] args)
         {
 
-            Cuenta c = new Cuenta();
-            Cuenta c2 = new Cuenta(Convert.ToInt32(1234));
+            Cuenta ctaa = new Cuenta();           
             
             int op=0;
 
@@ -21,7 +20,6 @@ namespace App.console.bank
                 Console.WriteLine("1 - Consultar Saldo.");
                 Console.WriteLine("2 - Depositar.");
                 Console.WriteLine("3 - Retirar.");
-                Console.WriteLine("4 - Transferir.");
                 Console.WriteLine("0 - Salir. ");
                 Console.WriteLine();
                 Console.Write("Ingrese una opción: ");
@@ -36,7 +34,7 @@ namespace App.console.bank
                     break;
 
                     case 1:
-                    c2.Consultar();
+                    ctaa.Consultar();
                     Console.WriteLine();
                     Console.WriteLine("Presione cualquier tecla para continuar...");
                     Console.ReadKey();
@@ -44,7 +42,15 @@ namespace App.console.bank
                     break;
                     
                     case 2:
-                    c.Depositar();
+                    ctaa.Depositar();
+                    Console.WriteLine();
+                    Console.WriteLine("Presione cualquier tecla para continuar...");
+                    Console.ReadKey();
+                    Console.Clear();
+                    break;
+
+                    case 3:
+                    ctaa.Retirar();
                     Console.WriteLine();
                     Console.WriteLine("Presione cualquier tecla para continuar...");
                     Console.ReadKey();
@@ -52,7 +58,6 @@ namespace App.console.bank
                     break;
 
                     default:
-                    Console.WriteLine("Ingrese una opción valida!");
                     break;
                 }
                 

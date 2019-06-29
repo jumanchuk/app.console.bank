@@ -5,7 +5,6 @@ namespace App.console.bank
     public class Cuenta
     {
         decimal saldo;
-        bool estado;
 
         public Cuenta()
         {
@@ -13,17 +12,11 @@ namespace App.console.bank
             saldo = 0;
         }
 
-        public Cuenta(int nrocta)
+        public void Consultar()
         {
-            if (nrocta==1)
-            {
+            Console.WriteLine();
+            Console.WriteLine("El Saldo actual es: " + saldo);
 
-
-            }
-            else
-            {
-                Console.WriteLine("Numero de cuenta invalida!");
-            }
         }
 
         public void Depositar()
@@ -35,7 +28,7 @@ namespace App.console.bank
             
             if(monto>0){
 
-            saldo=monto;
+            saldo+=monto;
             Console.WriteLine();
             Console.WriteLine("Deposito efectuado correctamente.");
             Console.WriteLine();
@@ -46,7 +39,7 @@ namespace App.console.bank
             else
             {
 
-             Console.WriteLine("Deposito efectuado correctamente.");
+             Console.WriteLine("Ingrese un importe valido.");
              Depositar();
              Console.WriteLine();
 
@@ -54,10 +47,31 @@ namespace App.console.bank
 
         }
 
-        public void Consultar()
+        public void Retirar()
         {
+            decimal monto;
+
+            Console.Write("Ingrese un el monto del deposito: ");
+            monto = Convert.ToDecimal(Console.ReadLine());
+            
+            if(monto>0){
+
+            saldo-=monto;
             Console.WriteLine();
-            Console.WriteLine("El Saldo actual es: " + saldo);
+            Console.WriteLine("Retiro efectuado correctamente.");
+            Console.WriteLine();
+            Console.Write("Saldo anterior: "+(saldo+monto));
+            Console.WriteLine(" --> Nuevo saldo: "+(saldo));
+
+            }
+            else
+            {
+
+             Console.WriteLine("Ingrese un importe valido.");
+             Retirar();
+             Console.WriteLine();
+
+            }
 
         }
 
