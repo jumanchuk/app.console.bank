@@ -4,19 +4,34 @@ namespace App.console.bank
 {
     public class Cuenta
     {
-        double saldo;
+        decimal saldo;
+        bool estado;
 
         public Cuenta()
         {
+            //Constructor de la clase
             saldo = 0;
+        }
+
+        public Cuenta(int nrocta)
+        {
+            if (nrocta==1)
+            {
+
+
+            }
+            else
+            {
+                Console.WriteLine("Numero de cuenta invalida!");
+            }
         }
 
         public void Depositar()
         {
-            double monto;
+            decimal monto;
 
             Console.Write("Ingrese un el monto del deposito: ");
-            monto = Convert.ToDouble(Console.ReadLine());
+            monto = Convert.ToDecimal(Console.ReadLine());
             
             if(monto>0){
 
