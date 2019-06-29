@@ -51,7 +51,7 @@ namespace App.console.bank
         {
             decimal monto;
 
-            Console.Write("Ingrese un el monto del deposito: ");
+            Console.Write("Ingrese un el monto del retiro: ");
             monto = Convert.ToDecimal(Console.ReadLine());
             
             if(monto>0){
